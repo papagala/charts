@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # charts
 Helm charts forked or created by Oswaldo Gomez
 =======
@@ -15,3 +16,7 @@ A Helm chart and [Docker image](https://hub.docker.com/r/3loc/mlflow) for MLFlow
 helm install --generate-name .
 ```
 >>>>>>> Updated README and values
+=======
+# Charts
+A Helm charts repository served using Github Pages.
+>>>>>>> Moved mlflow to charts folder
