@@ -19,4 +19,11 @@ helm install --generate-name .
 =======
 # Charts
 A Helm charts repository served using Github Pages.
+<<<<<<< HEAD
 >>>>>>> Moved mlflow to charts folder
+=======
+
+```
+helm repo add 3loc https://3loc.github.io/charts
+```
+>>>>>>> Updated README's
