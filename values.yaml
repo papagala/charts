@@ -65,7 +65,7 @@ resources: {}
 #     persistentVolumeClaim:
 #       claimName: minio
 
-nodeSelector: {}ß
+nodeSelector: {}
 
 tolerations: []
 
