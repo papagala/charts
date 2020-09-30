@@ -1,13 +1,13 @@
 # Kubernetes Helm charts by Oswaldo Gomez
 
-This is a [Helm](https://helm.sh) charts repository for Kubernetes made by [@cetic](https://cetic.be).
+This is a [Helm](https://helm.sh) charts repository for Kubernetes made by Oswaldo Gomez.
 
 ### Add Helm repository
 
-To install the [cetic](https://cetic.be) repo just run:
+To install the oswaldo's repo just run:
 
 ```bash
-helm repo add cetic https://cetic.github.io/helm-charts
+helm repo add oswaldo https://papagala.github.io/charts/
 helm repo update
 ```
 
@@ -17,7 +17,7 @@ helm repo update
 * [Mlflow](https://papagala.github.io/charts/mlflow)
 
   ```bash
-  helm install your-release-name cetic/nifi
+  helm install your-release-name oswaldo/mlflow
   ```
 
 ### License
