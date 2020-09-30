@@ -3,12 +3,12 @@ entries:
   mlflow:
   - apiVersion: v2
     appVersion: 1.4.0
-    created: "2020-09-29T19:17:08.65493-05:00"
+    created: "2020-09-29T19:19:03.884473-05:00"
     description: A Helm chart for MLFlow
     digest: d152da3d5895fc2926e1bfeddea57dbc8d9acb56b1e462788fcfa5828cb8100e
     name: mlflow
     type: application
     urls:
-    - https://github.com/papagala/charts/mlflow-1.4.0.tgz
+    - https://papagala.github.io/charts/mlflow-1.4.0.tgz
     version: 1.4.0
-generated: "2020-09-29T19:17:08.654203-05:00"
+generated: "2020-09-29T19:19:03.883791-05:00"
