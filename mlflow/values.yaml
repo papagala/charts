@@ -1,0 +1,72 @@
+replicaCount: 1
+
+image:
+  repository: oswaldodocker/mlflow # Original selltom/mlflow was buggy
+  tag: 1.7.3
+  pullPolicy: IfNotPresent
+
+backend_store_uri: "postgresql://<psql_username>:<psql_password>@postgres-postgresql.dev.svc.cluster.local:5432"
+default_artifact_root: "s3://<your_s3_bucket>/mlflow/artifacts"
+
+# The key is adding http:// before minio internal uri.
+# In my case I named the chart minio2, hence this uri.
+minio:
+  url: http://minio2.dev.svc.cluster.local:9000 
+  accesskey: <your_minio_username>
+  secretkey: <your_minio_password>
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 443
+  annotations: {}
+  ## Set the LoadBalancer service type to internal only.
+  ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
+  ##
+  # loadBalancerIP:
+
+  ## Load Balancer sources
+  ## https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/#restrict-access-for-loadbalancer-service
+  ##
+  # loadBalancerSourceRanges:
+  # - 10.10.10.0/24
+
+## Configure Ingress based on the documentation here: https://kubernetes.io/docs/concepts/services-networking/ingress/
+##
+ingress:
+  enabled: true
+  annotations: {}
+  tls: 
+  - hosts:
+    - "<your_host>"
+    secretName: <your_nginx_ingress_server_secret>
+  hosts: 
+  - "<your_host> "
+  path: /
+  backend:
+    servicePort: 443
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+# volumes:
+#   - name: minio
+#     persistentVolumeClaim:
+#       claimName: minio
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
